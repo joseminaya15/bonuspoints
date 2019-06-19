@@ -51,6 +51,25 @@
                                 <p>Nueva Factura</p>
                             </div>
                         </div>
+                        <div class="jm-card__bill">
+                            <div class="jm-card__title">
+                                <h2></h2>
+                            </div>
+                            <div class="jm-card__content">
+                                <div class="form-group">
+                                    <input type="texto" class="form-control" placeholder="Numero de Factura de Logistica" id="bill_number">
+                                </div>
+                                <div class="form-group">
+                                    <input type="texto" class="form-control" placeholder="Numero de parte" id="part_number">
+                                </div>
+                                <div class="form-group">
+                                    <input type="texto" class="form-control" placeholder="Descripción del producto" id="description" onkeypress="return valida(event)" onchange="restringirNum()" maxlength="6">
+                                </div>
+                                <div class="form-group">
+                                    <textarea type="texto" rows="2" class="form-control" placeholder="Fecha de la Factura" id="register_date"></textarea> 
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
