@@ -21,5 +21,5 @@ class M_Datos extends  CI_Model{
                   WHERE email = ?";
         $result = $this->db->query($sql, array($correo));
         return $result->result();
-    }
+    }   
 }

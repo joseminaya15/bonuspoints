@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Score extends CI_Controller {
+class Ranking extends CI_Controller {
 
 	function __construct() {
         parent::__construct();
@@ -19,7 +19,7 @@ class Score extends CI_Controller {
         $data['name'] = ucwords($this->session->userdata('Nombre'));
         $data['surname'] = ucwords($this->session->userdata('Apellido'));
         $data['company']   = ucwords($this->session->userdata('Empresa'));
-		$this->load->view('v_score', $data);
+		$this->load->view('v_ranking', $data);
 	}
     function cerrarCesion(){
         $data['error'] = EXIT_ERROR;

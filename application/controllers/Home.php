@@ -44,7 +44,7 @@ class Home extends CI_Controller {
 											'password'       => base64_encode($password),
 										   	'date'           => $fecha);
 				$datoInsert  = $this->M_Datos->insertarDatos($insertParticipante,'users');
-				// $this->sendConfirmation($correo);
+				$this->sendConfirmation($correo);
 	          	$data['msj']   = $datoInsert['msj'];
 	          	$data['error'] = $datoInsert['error'];
 	          }
@@ -70,7 +70,7 @@ class Home extends CI_Controller {
 			$this->email->from('info@iradianty.com');
 			$this->email->to($correo);
 			// $this->email->to('jose.minayac15@gmail.com');
-			$this->email->subject('Invitación lOGISTICA.');
+			$this->email->subject('Registro al programa de incentivos exitoso.');
 			$texto = '<!DOCTYPE html>
 			                <html>
 			                    <body>

@@ -42,7 +42,6 @@ $('.jm-premios--home .owl-carousel').owlCarousel({
 	autoplayTimeout : 3000,
 	navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"]
 });
-
 function sendInformation(){
 	var name 		 = $('#name').val();
 	var surname 	 = $('#surname').val();
@@ -118,4 +117,7 @@ function verificarDatos(e) {
 		e.preventDefault();
 		ingresar();
     }
+}
+function goToMenu(id){
+	location.href = id;
 }

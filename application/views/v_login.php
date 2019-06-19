@@ -12,12 +12,12 @@
         <meta name="theme-color"            content="#FFFFFF">
         <title>Logistica S.A. | La mejor tecnología, las mejores marcas</title>
         <link rel="shortcut icon" href="<?php echo RUTA_IMG?>logo/favicon.png">
-    	<link rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>toaster/toastr.min.css?v=<?php echo time();?>">
+    	<link rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>toaster/toastr.css?v=<?php echo time();?>">
         <link rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>bootstrap-select/css/bootstrap-select.min.css?v=<?php echo time();?>">
         <link rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>bootstrap/css/bootstrap.min.css?v=<?php echo time();?>">
         <link rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>mdl/material.min.css?v=<?php echo time();?>">
         <link rel="stylesheet"    href="<?php echo RUTA_FONTS?>material-icons.css?v=<?php echo time();?>">
-        <link rel="stylesheet"    href="<?php echo RUTA_FONTS?>metric.css?v=<?php echo time();?>">
+        <link rel="stylesheet"    href="<?php echo RUTA_FONTS?>opensans.css?v=<?php echo time();?>">
     	<link rel="stylesheet"    href="<?php echo RUTA_CSS?>m-p.min.css?v=<?php echo time();?>">
     	<link rel="stylesheet"    href="<?php echo RUTA_CSS?>style.css?v=<?php echo time();?>">
         <link rel="stylesheet"    href="<?php echo RUTA_CSS?>admin.css?v=<?php echo time();?>">
@@ -25,14 +25,14 @@
     <body>
         <div class="js-header">
             <div class="js-header--left">
-                <img src="<?php echo RUTA_IMG?>logo/logo-logistica.svg">
+                <a href="Home"><img src="<?php echo RUTA_IMG?>logo/logo-logistica.svg"></a>
             </div>
             <div class="js-header--right">
-                <p>Evento Panam&aacute;</p>
+                <p>Programa Incentivos</p>
             </div>
         </div>
         <section class="js-section js-height">
-            <div class="js-fondo"></div>
+            <div class="js-fondo admin"></div>
             <div class="js-container js-flex">
                 <div class="js-login">
                     <h2>Acceso a la Herramienta</h2>
@@ -76,11 +76,11 @@
                 let USERNAME = sessionStorage.getItem('USERNAME');
                 let PASS = sessionStorage.getItem('PASS');
                 if(CHECK == 1) {
-                    $('#checkbox-2').prop('checked', true);
+                    $('#remember').prop('checked', true);
                     $('#usuario').val(USERNAME);
                     $('#password').val(PASS);
                 }else {
-                    $('#checkbox-2').prop('checked', false);
+                    $('#remember').prop('checked', false);
                     $('#usuario').val('');
                     $('#password').val('');
                 }

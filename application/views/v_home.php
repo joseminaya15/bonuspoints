@@ -140,7 +140,6 @@
             </div>
             <div id="confirmation" class="js-confirmation">
                 <h2>Registro realizado correctamente.</h2>
-                <p>¡Lo esperamos!</p>
             </div>
         </div>
     </section>

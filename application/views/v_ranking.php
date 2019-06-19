@@ -43,12 +43,12 @@
                         <p>Empresa <?php echo $company == null ? '' : $company; ?></p>
                     </div>
                     <div class="jm-container--cards">
-                        <div id="Award" class="jm-card jm-card-menu">
+                        <div id="Ranking" class="jm-card jm-card-menu" style="opacity: .5; pointer-events: none;">
                             <div class="jm-card__title">
-                                <img src="<?php echo RUTA_IMG?>menu/premios.png">
+                                <img src="<?php echo RUTA_IMG?>menu/ranking.png">
                             </div>
                             <div class="jm-card__supporting-text">
-                                <p>Ver Premios</p>
+                                <p>Ranking</p>
                             </div>
                         </div>
                     </div>

@@ -23,9 +23,9 @@ class Login extends CI_Controller {
 		$data['error'] = EXIT_ERROR;
         $data['msj']   = null;
          try {
-			$usuario  = $this->input->post('usuario');
-			$password = $this->input->post('password');
-			if($usuario == 'sapadmin' && $password == 'admin'){
+			$usuario  = $this->input->post('Usuario');
+			$password = $this->input->post('Password');
+			if($usuario == 'logisticaadmin' && $password == 'admin'){
 				$data['href'] = 'Admin';
 				$session = array('usuario' => $usuario);
 			    $this->session->set_userdata($session);
@@ -35,14 +35,14 @@ class Login extends CI_Controller {
 				if(count($username) == 0) {
 					$data['user'] = 'Este usuario no existe';
 				}else {
-					if($password == base64_decode($username[0]->pass)){
+					if($password == base64_decode($username[0]->password)){
 					if(count($username) != 0){
-						if(strtolower($username[0]->usuario) == strtolower($usuario)){
-							$session = array('usuario' 		  => $usuario,
-											 'Nombre_capitan' => $username[0]->Nombre_capitan,
-											 'Nombre_canal'   => $username[0]->Nombre_canal,
-											 'Id_user' 		  => $username[0]->Id,
-											 'idioma' 	  	  => 'Español');
+						if(strtolower($username[0]->email) == strtolower($usuario)){
+							$session = array('usuario'   => $usuario,
+											 'Nombre'    => $username[0]->name,
+											 'Apellido'  => $username[0]->surname,
+											 'Empresa'   => $username[0]->company,
+											 'Id_user' 	 => $username[0]->Id);
 			          		$this->session->set_userdata($session);
 			          		$data['href'] = 'Menu';
 			          		$data['error'] = EXIT_SUCCESS;
