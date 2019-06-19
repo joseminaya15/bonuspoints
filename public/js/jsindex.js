@@ -118,6 +118,3 @@ function verificarDatos(e) {
 		ingresar();
     }
 }
-function goToMenu(id){
-	location.href = id;
-}
