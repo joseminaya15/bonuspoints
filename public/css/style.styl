@@ -377,6 +377,7 @@ footer
 				font-family $bold
 .jm-menu
 	text-align right
+	padding 0 25px
 	a
 		color #FFFFFF !important
 		text-decoration none
@@ -399,6 +400,7 @@ footer
 		border 1px solid #FFFFFF
 		margin-left 20px
 .jm-username
+	padding 0 25px
 	h2
 		color #FFFFFF
 		font-size 32px
@@ -411,6 +413,7 @@ footer
 		line-height normal
 .jm-container--cards
 	margin-top 30px
+	text-align center
 	.jm-card-menu
 		transitionTransform()
 		background-color rgba(0, 0, 0, 0.8)
@@ -449,6 +452,15 @@ footer
 		display inline-block
 		vertical-align top
 		border-radius 20px
+		.jm-card__title
+			h2
+				margin 0
+				margin-bottom 30px
+				padding 10px 0
+				font-size 22px
+				line-height 26px
+				border-bottom 1px solid #000000
+				font-family $medium
 /*BOOTSTRAP*/
 .navbar-default
 	transitionAll()
@@ -784,6 +796,22 @@ table
 // 		&.fondo1
 // 			background url(../img/fondo/fondo1_mobile.jpg) no-repeat center center
 @media (max-width: 600px)
+	.jm-menu
+		text-align center
+	.jm-container--cards
+		padding 0 20px
+		.jm-card-menu
+			max-width 100%
+			margin 15px auto
+			padding 20px
+			.jm-card__title
+				height 100%
+			.jm-card__supporting-text
+				padding 0
+		.jm-card__bill
+			display block
+			margin 20px auto
+			max-width 100%
 	.js-contenido
 		padding 20px
 		h2

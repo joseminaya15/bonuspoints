@@ -21,5 +21,13 @@ class M_Datos extends  CI_Model{
                   WHERE email = ?";
         $result = $this->db->query($sql, array($correo));
         return $result->result();
-    }   
+    }
+
+    function existPartNumber($partnumber){
+        $sql = "SELECT * 
+                    FROM bill 
+                    WHERE part_number = '".$partnumber."'";
+        $result = $this->db->query($sql);
+        return $result->result();
+    }
 }

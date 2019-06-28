@@ -53,21 +53,49 @@
                         </div>
                         <div class="jm-card__bill">
                             <div class="jm-card__title">
-                                <h2></h2>
+                                <h2>Registra tus Facturas</h2>
                             </div>
                             <div class="jm-card__content">
-                                <div class="form-group">
-                                    <input type="texto" class="form-control" placeholder="Numero de Factura de Logistica" id="bill_number">
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <input type="texto" class="form-control" placeholder="Bucar Numero de Parte" id="part_number" onkeypress="searchPartNumber(event,$(this))">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <input type="texto" class="form-control" placeholder="Descripción del producto" readonly id="description">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <input type="texto" class="form-control" placeholder="Score" readonly id="score">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <input type="texto" class="form-control" placeholder="Numero de Factura de Logistica" id="bill_number">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <input type="texto" class="form-control" placeholder="Cantidad" id="quantity"> 
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <input type="texto" class="form-control" placeholder="Total de puntos" readonly id="total"> 
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 text-right">
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button" onclick="sendBill()">Registrar Factura</button>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <input type="texto" class="form-control" placeholder="Numero de parte" id="part_number">
-                                </div>
-                                <div class="form-group">
-                                    <input type="texto" class="form-control" placeholder="Descripción del producto" id="description" onkeypress="return valida(event)" onchange="restringirNum()" maxlength="6">
-                                </div>
-                                <div class="form-group">
-                                    <textarea type="texto" rows="2" class="form-control" placeholder="Fecha de la Factura" id="register_date"></textarea> 
-                                </div>
+                                
+                                
+                                
+                                
+                                
                             </div>
                         </div>
                     </div>
@@ -79,8 +107,9 @@
         <script src="<?php echo RUTA_PLUGINS?>bootstrap/js/bootstrap.min.js?v=<?php echo time();?>"></script>
         <script src="<?php echo RUTA_PLUGINS?>bootstrap-select/js/bootstrap-select.min.js?v=<?php echo time();?>"></script>
         <script src="<?php echo RUTA_PLUGINS?>bootstrap-select/js/i18n/defaults-es_ES.min.js?v=<?php echo time();?>"></script>
-        <script src="<?php echo RUTA_PLUGINS?>toaster/toastr.min.js?v=<?php echo time();?>"></script>
+        <script src="<?php echo RUTA_PLUGINS?>toaster/toastr.js?v=<?php echo time();?>"></script>
         <script type="text/javascript" src="<?php echo RUTA_PLUGINS?>mdl/material.min.js?v=<?php echo time();?>"></script>
+        <script src="<?php echo RUTA_JS?>Utils.js?v=<?php echo time();?>"></script>
         <script src="<?php echo RUTA_JS?>menu.js?v=<?php echo time();?>"></script>
     </body>
 </html>

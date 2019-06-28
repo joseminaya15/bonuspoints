@@ -6,7 +6,7 @@ class Bill extends CI_Controller {
 	function __construct() {
         parent::__construct();
         $this->load->helper("url");
-        // $this->load->model('M_datos');
+        $this->load->model('M_Datos');
         $this->output->set_header('Last-Modified:'.gmdate('D, d M Y H:i:s').'GMT');
         $this->output->set_header('Cache-Control: no-store, no-cache, must-revalidate');
         $this->output->set_header('Cache-Control: post-check=0, pre-check=0',false);
@@ -32,6 +32,46 @@ class Bill extends CI_Controller {
             $data['msj'] = $e->getMessage();
         }
         echo json_encode($data);
+    }
+    function searchPartNumber(){
+        $data['error'] = EXIT_ERROR;
+      	$data['msj']   = null;
+		try {
+			$partnumber 	 = $this->input->post('PartNumber');
+			$existe          = $this->M_Datos->existPartNumber($partnumber);
+			if(count($existe) == 0) {
+				$data['msj']  = "Numero de Parte no existe";
+			}
+			else{
+                $data['description'] = $existe[0]->description;
+                $data['score'] = $existe[0]->score;
+                $data['error'] = EXIT_SUCCESS;
+            }
+		} catch(Exception $ex) {
+			$data['msj'] = $ex->getMessage();
+		}
+      	echo json_encode($data);
+    }
+    function registerBill(){
+        $data['error'] = EXIT_ERROR;
+      	$data['msj']   = null;
+		try {
+            $partnumber  = $this->input->post('PartNumber');
+            $description = $this->input->post('Description');
+            $score 	     = $this->input->post('Score');
+            $billNumber  = $this->input->post('BillNumber');
+            $quantity 	 = $this->input->post('Quantity');
+            $total 	     = $this->input->post('Total');
+			if(count($existe) == 0) {
+				$data['msj']  = "Part Number no existe";
+			}
+			else{
+                $data['error'] = EXIT_SUCCESS;
+            }
+		} catch(Exception $ex) {
+			$data['msj'] = $ex->getMessage();
+		}
+      	echo json_encode($data);
     }
     // function nuevaAnotacion(){
     //     $data['error'] = EXIT_ERROR;
