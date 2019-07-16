@@ -50,6 +50,7 @@ function sendBill(){
     var description = $("#description").val();
     var score       = $("#score").val();
     var bill_number = $("#bill_number").val();
+    var bill_date   = $("#bill_date").val();
     var quantity    = $("#quantity").val();
     var total       = $("#total").val();
     if(partNumber == null || partNumber == '') {
@@ -68,6 +69,10 @@ function sendBill(){
         msj('error', 'Numero de Factura debe completarse');
         return;
     }
+    if(bill_date == null || bill_date == '') {
+        msj('error', 'Fecha de Factura debe completarse');
+        return;
+    }
     if(quantity == null || quantity == '') {
         msj('error', 'Cantidad debe completarse');
         return;
@@ -83,8 +88,9 @@ function sendBill(){
                  Description : description,
                  Score       : score,
                  BillNumber  : bill_number,
+                 BillDate    : bill_date,
                  Quantity    : quantity,
-                 Total       : total,}
+                 Total       : total}
     }).done(function(data){
         try{
             data = JSON.parse(data);
@@ -94,8 +100,10 @@ function sendBill(){
                 $("#description").val("");
                 $("#score").val("");
                 $("#bill_number").val("");
+                $("#bill_date").val("");
                 $("#quantity").val("");
                 $("#total").val("");
+                msj('success', 'Se registro su factura correctamente');
             }else {
                 msj('error', data.msj);
                 return;

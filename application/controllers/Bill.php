@@ -60,14 +60,23 @@ class Bill extends CI_Controller {
             $description = $this->input->post('Description');
             $score 	     = $this->input->post('Score');
             $billNumber  = $this->input->post('BillNumber');
+            $billDate    = $this->input->post('BillDate');
             $quantity 	 = $this->input->post('Quantity');
             $total 	     = $this->input->post('Total');
-			if(count($existe) == 0) {
-				$data['msj']  = "Part Number no existe";
-			}
-			else{
-                $data['error'] = EXIT_SUCCESS;
-            }
+            $fecha       = date('Y-m-d');
+            $insertBill = array('part_number'   => $partnumber,
+                                'description'   => $description,
+                                'score'         => $score,
+                                'bill_number'   => $billNumber,
+                                'bill_date'     => $billDate,
+                                'quantity'      => $quantity,
+                                'total'         => $total,
+                                'id_user'       => $this->session->userdata('Id_user'),
+                                'register_date' => $fecha);
+            $datoInsert  = $this->M_Datos->insertarFactura($insertBill,'new_bill');
+            // $this->sendConfirmation($correo);
+            $data['msj']   = $datoInsert['msj'];
+            $data['error'] = $datoInsert['error'];
 		} catch(Exception $ex) {
 			$data['msj'] = $ex->getMessage();
 		}

@@ -79,6 +79,11 @@
                                     </div>
                                     <div class="col-md-4 col-sm-6 col-xs-12">
                                         <div class="form-group">
+                                            <input type="texto" class="form-control" placeholder="Fecha de Factura" id="bill_date">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 col-xs-12">
+                                        <div class="form-group">
                                             <input type="texto" class="form-control" placeholder="Cantidad" id="quantity"> 
                                         </div>
                                     </div>
